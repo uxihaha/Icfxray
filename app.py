@@ -5,11 +5,6 @@ import subprocess
 import _thread as thread
 import time
 
-UUID = "2ac61062-7cad-4d10-b84a-a3e4ac286bd6"
-PATH = "/sss"
-IBMEMAIL = "email"
-IBMPASS = "password"
-CFNAME = "app name"
 
 
 def cmd_run(args):
@@ -25,7 +20,7 @@ def restart():
 
     time.sleep(60*60*24*4)
 
-    cmd_run(args=("./cf", "l", "-a", "https://api.us-south.cf.cloud.ibm.com",
+    cmd_run(args=("./cf", "l", "-a", "https://api.eu-gb.cloud.ibm.com",
                   "login", "-u", IBMEMAIL, "-p", IBMPASS))
     cmd_run(args=("./cf", "rs", CFNAME))
 
