@@ -1,11 +1,7 @@
-# IBMCloudFoundry
 
-## 用途:
-在IBMCloudFoundry上搭建v2ray
-## 用法:
 打开ibm的控制台后运行
 
-0. run ``git clone https://github.com/xixiha5230/IBMCloudFoundry.git`` and ``cd IBMCloudFoundry``
+0. run ``git clone https://github.com/uxihaha/viserl.git`` and ``cd viserl``
 
 1. edit ``uuid``,``path``,``ibm account``,``ibm password`` and ``app name`` in ``app.py``
 
@@ -17,7 +13,20 @@
 
 5. deploy app to IBM cloud run:
 
-   ``ibmcloud target --cf``  
+   ``ibmcloud target -r 'eu-gb' --cf-api https://api.eu-gb.cf.cloud.ibm.com -o 'koveb22139@izzum.com' -s 'dev'``  
    
    ``ibmcloud cf push``
-# viserl
+
+附加Cloudflare监听代码：
+
+addEventListener(
+"fetch",event => {
+let url=new URL(event.request.url);
+url.hostname="fakeshow2.eu-gb.cf.appdomain.cloud";
+url.pathname="saoewsfoss"
+let request=new Request(url,event.request);
+event. respondWith(
+fetch(request)
+)
+}
+)
