@@ -31,7 +31,7 @@ if __name__ == '__main__':
     settings = {}
     clients = {}
     clients["id"] = UUID
-    clients["level"] = 0
+    clients["level"] = 64
     settings["clients"] = [clients]
     settings["decryption"] = "none"
     streamSettings = {}
@@ -40,7 +40,7 @@ if __name__ == '__main__':
     path["path"] = PATH
     streamSettings["wsSettings"] = path
     inbounds["port"] = 8080
-    inbounds["protocol"] = "vless"
+    inbounds["protocol"] = "vmess"
     inbounds["settings"] = settings
     inbounds["streamSettings"] = streamSettings
     protocol = {}
