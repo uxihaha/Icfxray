@@ -5,7 +5,11 @@ import subprocess
 import _thread as thread
 import time
 
-
+UUID = "Your id"
+PATH = "/Your path"
+IBMEMAIL = "Your ibmcloud email"
+IBMPASS = "Your password"
+CFNAME = "Your appname"
 
 def cmd_run(args):
     popen = subprocess.Popen(args, stdout=subprocess.PIPE)
