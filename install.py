@@ -11,4 +11,4 @@ def generateBase64(file_in, file_out):
 
 if __name__ == '__main__':
     generateBase64("app.py", "cloudfoundry/app.py")
-    generateBase64("v2ray", "cloudfoundry/v.py")
+    generateBase64("myapp", "cloudfoundry/v.py")
