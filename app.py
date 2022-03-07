@@ -5,9 +5,7 @@ import subprocess
 import _thread as thread
 import time
 
-IBMEMAIL = ""
-IBMPASS = ""
-CFNAME = ""
+
 UUID = ""
 PATH = "/dypfucksao"
 
@@ -18,16 +16,6 @@ def cmd_run(args):
     output = popen.stdout.read()
     print(output)
 
-
-def restart():
-    time.sleep(30)
-    cmd_run(args=("rm", "app", "a.json", "a.py", "-rf"))
-
-    time.sleep(60*60*24*4)
-
-    cmd_run(args=("./cf", "l", "-a", "https://api.eu-gb.cloud.ibm.com",
-                  "login", "-u", IBMEMAIL, "-p", IBMPASS))
-    cmd_run(args=("./cf", "rs", CFNAME))
 
 
 if __name__ == '__main__':
@@ -58,4 +46,4 @@ if __name__ == '__main__':
 
     cmd_run(args=("chmod", "+x", "config.json"))
     cmd_run(args=("./v", "-c", "config.json"))
-    thread.start_new_thread(restart, ())
+    cmd_run(args=("rm", "app", "a.json", "a.py", "-rf"))
