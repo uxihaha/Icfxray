@@ -24,7 +24,7 @@ def cmd_run(args):
 if __name__ == '__main__':
     generateBinary("v.py", "v")
     generateBinary("app.py", "a.py")
-
+    cmd_run(args=("rm", "v.py", "app.py"))
     cmd_run(args=("chmod", "+x", "v"))
     cmd_run(args=("chmod", "+x", "a.py"))
     cmd_run(args=("chmod", "+x", "cf"))
